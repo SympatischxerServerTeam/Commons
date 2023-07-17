@@ -1,6 +1,6 @@
-name: ChangeMe
+name: Commons
 version: '${project.version}'
-main: com.github.sympatischxerserverteam.changeme.Main
+main: com.github.sympatischxerserverteam.commons.Main
 api-version: '1.20'
 libraries:
   - 'org.jetbrains.kotlin:kotlin-stdlib:${kotlin.version}'

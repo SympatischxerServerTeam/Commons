@@ -64,6 +64,12 @@
                         <goals>
                             <goal>test-compile</goal>
                         </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <source>src/test/java</source>
+                                <source>src/test/kotlin</source>
+                            </sourceDirs>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -128,7 +134,8 @@
                         <id>server-install</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>install</goal>
+                            <!-- TODO: Turn auto install on again. -->
+                            <!-- <goal>install</goal> -->
                             <goal>copy-plugin</goal>
                             <goal>start</goal>
                         </goals>
