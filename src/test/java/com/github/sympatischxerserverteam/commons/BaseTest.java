@@ -1,4 +1,4 @@
-package com.github.sympatischxerserverteam.changeme;
+package com.github.sympatischxerserverteam.commons;
 
 import be.seeseemelk.mockbukkit.MockBukkit;
 import org.junit.jupiter.api.AfterEach;

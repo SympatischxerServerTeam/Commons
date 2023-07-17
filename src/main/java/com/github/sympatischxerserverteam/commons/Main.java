@@ -1,11 +1,10 @@
-package com.github.sympatischxerserverteam.changeme;
+package com.github.sympatischxerserverteam.commons;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.java.JavaPluginLoader;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 

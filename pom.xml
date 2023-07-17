@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.sympatischxerserverteam</groupId>
-    <artifactId>changeme</artifactId>
+    <artifactId>commons</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>ChangeMe</name>
+    <name>Commons</name>
 
     <properties>
         <java.version>11</java.version>
