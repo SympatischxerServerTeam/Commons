@@ -14,7 +14,7 @@ public class Main extends SymPlugin {
     public Main() {
         super();
     }
-
+    
     public Main(@NotNull JavaPluginLoader loader, @NotNull PluginDescriptionFile description, @NotNull File dataFolder, @NotNull File file) {
         super(loader, description, dataFolder, file);
     }

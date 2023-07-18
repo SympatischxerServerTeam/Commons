@@ -4,3 +4,6 @@ main: com.github.sympatischxerserverteam.commons.Main
 api-version: '1.20'
 libraries:
   - 'org.jetbrains.kotlin:kotlin-stdlib:${kotlin.version}'
+  - 'org.hibernate:hibernate-core:${hibernate.version}'
+  - 'org.mariadb.jdbc:mariadb-java-client:${mariadb.version}'
+  - 'io.smallrye:jandex:${jandex.version}'

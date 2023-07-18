@@ -4,8 +4,4 @@ import org.junit.jupiter.api.Test;
 
 class MainTest extends BaseTest{
 
-    @Test
-    void onEnable() {
-
-    }
 }
