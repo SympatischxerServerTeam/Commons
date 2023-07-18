@@ -1,5 +1,6 @@
 package com.github.sympatischxerserverteam.commons.config
 
+import com.github.sympatischxerserverteam.commons.user.User
 import jakarta.persistence.Entity
 import org.bukkit.configuration.serialization.ConfigurationSerializable
 import org.bukkit.plugin.Plugin
@@ -38,6 +39,7 @@ class DatabaseConnection(
 
     fun buildHibernateConfig(plugin: Plugin): Configuration {
         val cfg = Configuration()
+            .configure()
             .setProperty("connection.driver_class", this.driver.name)
             .setProperty("hibernate.connection.url", this.url)
             .setProperty("hibernate.connection.username", this.user)
@@ -47,11 +49,14 @@ class DatabaseConnection(
             .setProperty("show_sql", this.showSql.toString())
             .setProperty("hibernate.connection.pool_size", this.poolSize.toString())
 
-        val indexReader = IndexReader(plugin.getResource("META-INF/jandex.idx"))
-        val index = indexReader.read()
-        val annotated = index.getAnnotations(DotName.createSimple(Entity::class.java))
-        annotated.filter { it.target().kind() == AnnotationTarget.Kind.CLASS }
-            .forEach { cfg.addAnnotatedClass(Class.forName(it.name().toString())) }
+//        val indexReader = IndexReader(plugin.getResource("META-INF/jandex.idx"))
+//        val index = indexReader.read()
+//        val annotated = index.getAnnotations(DotName.createSimple(Entity::class.java))
+//        annotated.filter { it.target().kind() == AnnotationTarget.Kind.CLASS }
+//            .onEach { println(it.target().toString()) }
+//            .forEach { cfg.addAnnotatedClass(Class.forName(it.target().asClass().name().toString())) }
+
+//        cfg.addAnnotatedClass(User::class.java)
         return cfg
     }
 

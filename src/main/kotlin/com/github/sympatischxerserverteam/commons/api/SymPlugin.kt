@@ -3,6 +3,7 @@
 package com.github.sympatischxerserverteam.commons.api
 
 import com.github.sympatischxerserverteam.commons.config.DatabaseConnection
+import com.github.sympatischxerserverteam.commons.user.User
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.TextColor
 import org.bukkit.Bukkit
@@ -10,10 +11,10 @@ import org.bukkit.configuration.serialization.ConfigurationSerialization
 import org.bukkit.plugin.PluginDescriptionFile
 import org.bukkit.plugin.java.JavaPlugin
 import org.bukkit.plugin.java.JavaPluginLoader
-import org.hibernate.cfg.Configuration
 import org.hibernate.dialect.MariaDBDialect
 import org.mariadb.jdbc.Driver
 import java.io.File
+import java.util.*
 
 open class SymPlugin : JavaPlugin, MessageReceiver {
 
@@ -54,7 +55,12 @@ open class SymPlugin : JavaPlugin, MessageReceiver {
         this.config.options().copyDefaults()
         this.saveConfig()
 
-        this.dbConnection.connect(this).close()
+        val s = this.dbConnection.connect(this)
+        s.beginTransaction()
+        val u = User(UUID.randomUUID(), "Example")
+        s.persist(u)
+        s.transaction.commit()
+        s.close()
     }
 
     override fun onEnable() {
